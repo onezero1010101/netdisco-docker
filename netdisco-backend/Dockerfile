@@ -13,7 +13,7 @@ RUN apk add --no-cache \
       tar
 
 WORKDIR /home/netdisco/netdisco-mibs
-RUN curl -sL https://api.github.com/repos/netdisco/netdisco-mibs/releases/latest | \
+RUN curl -sL https://api.github.com/repos/onezero1010101/netdisco-mibs/releases/latest | \
   grep browser_download_url | xargs printf "curl -sL %s\n" | tail -1 | \
   sh | tar --strip-components=1 -zxf - && \
   chown -R netdisco:netdisco /home/netdisco/netdisco-mibs
